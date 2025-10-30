@@ -149,7 +149,7 @@ GROUP BY
 
 **Question 7**
 ---
-![image](https://github.com/user-attachments/assets/f08afdaa-3a6f-4ae7-be70-62e4368820a3)
+![image](https://github.com/user-attachments/assets/56cd9419-9f03-4a03-9ab1-b515113d6d5f)
 
 **Program:**
 ```sql
@@ -166,7 +166,8 @@ HAVING
 
 **Output:**
 
-![image](https://github.com/user-attachments/assets/56cd9419-9f03-4a03-9ab1-b515113d6d5f)
+![image](https://github.com/user-attachments/assets/f08afdaa-3a6f-4ae7-be70-62e4368820a3)
+
 
 
 **Question 8**
