@@ -104,204 +104,149 @@ CREATE TABLE Table_Name (
 ```
 **Question 1**
 --
-Create a table named Attendance with the following constraints:
-- AttendanceID as INTEGER should be the primary key.
-- EmployeeID as INTEGER should be a foreign key referencing Employees(EmployeeID).
-- AttendanceDate as DATE.
-- Status as TEXT should be one of 'Present', 'Absent', 'Leave'.
+![image](https://github.com/user-attachments/assets/50a79907-17ad-4021-bf11-27706a720b31)
 
+**Program:**
 ```sql
-CREATE TABLE Attendance(
-AttendanceID INTEGER, 
-EmployeeID INTEGER,
-AttendanceDate DATE,
-Status TEXT CHECK(Status IN('Present','Absent','Leave')),
-FOREIGN KEY (EmployeeID) REFERENCES Employees(EmployeeID)
-);
+ALTER TABLE employee ADD COLUMN designation varchar(50);
 ```
 
 **Output:**
 
-<img width="1076" height="129" alt="image" src="https://github.com/user-attachments/assets/a2fec63b-e113-419c-a6ac-48cde04e92b3" />
+![image](https://github.com/user-attachments/assets/dce27374-26db-472d-8dfc-50191676368f)
 
 
 **Question 2**
 ---
-Create a table named Locations with the following columns:
-- LocationID as INTEGER
-- LocationName as TEXT
-- Address as TEXT
+![image](https://github.com/user-attachments/assets/d7529bd6-c253-48dc-9749-491421c14344)
 
+**Program:**
 ```sql
-CREATE TABLE Locations(
-LocationID INTEGER,
-LocationName TEXT,
-Address TEXT
-);
+CREATE TABLE Employees(EmployeeID INTEGER,FirstName TEXT,LastName TEXT,HireDate DATE);
 ```
 
 **Output:**
 
-<img width="1833" height="327" alt="image" src="https://github.com/user-attachments/assets/407e7673-d40c-464f-98f8-19294f354c87" />
+![image](https://github.com/user-attachments/assets/90dcffb9-5a9e-487a-b11f-6038208848a8)
 
 
 **Question 3**
 ---
-Create a new table named contacts with the following specifications:
-- contact_id as INTEGER and primary key.
-- first_name as TEXT and not NULL.
-- last_name as TEXT and not NULL.
-- email as TEXT.
-- phone as TEXT and not NULL with a check constraint to ensure the length of phone is at least 10 characters.
+![image](https://github.com/user-attachments/assets/0456c687-aa34-4c33-b52e-43f1e1d1f776)
 
+**Program:**
 ```sql
-CREATE TABLE contacts(
-contact_id INTEGER PRIMARY KEY,
-first_name TEXT NOT NULL,
-last_name TEXT NOT NULL,
-email TEXT,
-phone TEXT NOT NULL CHECK (LENGTH(phone)>=10)
-);
+CREATE TABLE Locations(LocationID INTEGER,LocationName TEXT,Address TEXT);
 ```
 
 **Output:**
 
-<img width="1759" height="205" alt="image" src="https://github.com/user-attachments/assets/7694de92-0ac4-46d5-bf6b-ad1882069f97" />
+![image](https://github.com/user-attachments/assets/3e255c2b-83e8-4468-83f3-dcdb20c3b71e)
 
 
 **Question 4**
 ---
-Write a SQL Query  to Rename attribute "name" to "first_name"  and add mobilenumber as number ,DOB as Date,State as varchar(30) in the table Companies. 
+![image](https://github.com/user-attachments/assets/c608e8a2-4a4c-4abc-a9eb-488c84a2b6ed)
 
+**Program:**
 ```sql
-ALTER TABLE Companies RENAME COLUMN name to first_name;
-ALTER TABLE Companies ADD mobilenumber number;
-ALTER TABLE Companies ADD DOB Date;
-ALTER TABLE Companies ADD State varchar(30);
- 
+CREATE TABLE Members(MemberID INTEGER,MemberName TEXT,JoinDate DATE);
 ```
 
 **Output:**
-
-<img width="1887" height="412" alt="image" src="https://github.com/user-attachments/assets/7050b004-8849-49ed-abc5-0b98ab85cdc7" />
+![image](https://github.com/user-attachments/assets/6035ad29-6160-4a43-9a71-359a29c6b617)
 
 
 **Question 5**
 ---
-Write a SQL query to add a new column MobileNumber of type NUMBER and a new column Address of type VARCHAR(100) to the Student_details table.
+![image](https://github.com/user-attachments/assets/0a80f8fc-747c-4451-8cf8-9594a9680acf)
 
+**Program:**
 ```sql
-ALTER TABLE Student_details ADD MobileNumber NUMBER;
-ALTER TABLE Student_details ADD Address VARCHAR(100);
+INSERT INTO Products(ProductID,Name,Category,Price,Stock) VALUES (101,'Laptop','Electronics',1500,50);
 ```
 
 **Output:**
 
-<img width="1790" height="365" alt="image" src="https://github.com/user-attachments/assets/f0a853f3-8dc9-481b-8f1d-853251460b6d" />
+![image](https://github.com/user-attachments/assets/1f77bbfd-4bd1-40d2-ba50-72ff20766a9e)
 
 
 **Question 6**
 ---
-Create a table named Employees with the following constraints:
+![image](https://github.com/user-attachments/assets/1aa07b34-e803-47d7-8318-8a169baf3980)
 
-- EmployeeID should be the primary key.
-- FirstName and LastName should be NOT NULL.
-- Email should be unique.
-- Salary should be greater than 0.
-- DepartmentID should be a foreign key referencing the Departments table.
-
+**Program:**
 ```sql
-CREATE TABLE Employees (
-EmployeeID INTEGER PRIMARY KEY,
-FirstName TEXT NOT NULL,
-LastName TEXT NOT NULL, 
-Email TEXT UNIQUE,
-Salary INTEGER CHECK (Salary>0),
-DepartmentID INTEGER,
-FOREIGN KEY (DepartmentID)REFERENCES Departments
-);
+ALTER TABLE Student_details ADD COLUMN Date_of_birth Date;
 ```
 
 **Output:**
-
-<img width="1782" height="363" alt="image" src="https://github.com/user-attachments/assets/1e0f67d6-cbc2-403e-a4f3-abe103bbdaca" />
+![image](https://github.com/user-attachments/assets/83df0769-64e4-4ebc-b66d-2273f3b16b44)
 
 
 **Question 7**
 ---
-Insert a customer with CustomerID 301, Name Michael Jordan, Address 123 Maple St, City Chicago, and ZipCode 60616 into the Customers table.
+![image](https://github.com/user-attachments/assets/d3ea3569-6466-4b8c-bd6c-659f6fb73f68)
 
+**Program:**
 ```sql
-INSERT INTO Customers(CustomerID,Name,Address,City,ZipCode) VALUES (301,'Michael Jordan','123 Maple St', 'Chicago',60616);
-```
-
-**Output:**
-
-<img width="1884" height="231" alt="image" src="https://github.com/user-attachments/assets/c470295e-c070-4f05-8dad-4441f33802a8" />
-
-
-**Question 8**
----
-Insert all employees from Former_employees into Employee
-
-Table attributes are EmployeeID, Name, Department, Salary
-
-```sql
-INSERT INTO Employee (EmployeeID, Name, Department, Salary)
-SELECT EmployeeID, Name, Department, Salary
-FROM Former_employees;
-```
-
-**Output:**
-
-<img width="1311" height="278" alt="image" src="https://github.com/user-attachments/assets/ded17bfb-23d3-486a-9643-c560e043d750" />
-
-
-**Question 9**
----
-Create a table named Customers with the following columns:
-
--CustomerID as INTEGER
-- Name as TEXT
-- Email as TEXT
-- JoinDate as DATETIME
-```sql
-CREATE TABLE Customers(
-
-CustomerID INTEGER,
-Name  TEXT,
-Email  TEXT,
-JoinDate  DATETIME 
+CREATE TABLE Products(
+    ProductID PRIMARY KEY,
+    ProductName NOT NULL,
+    Price REAL CHECK(Price>0),
+    Stock INTEGER CHECK(Stock>=0)
 );
 ```
 
 **Output:**
 
-<img width="1656" height="280" alt="image" src="https://github.com/user-attachments/assets/660325e3-77d9-4faf-97f4-c59e815a0a54" />
+![image](https://github.com/user-attachments/assets/9c116bcd-5018-4481-8fd2-2f2752c4bb53)
 
 
-**Question 10**
+**Question 8**
 ---
-In the Products table, insert a record where some fields are NULL, another record where all fields are filled without any NULL values, and a third record where some fields are filled, and others are left as NULL.
+![image](https://github.com/user-attachments/assets/58b8f24c-d473-4eff-b276-d4c6f2433efa)
 
-| ProductID | Name             | Category     | Price   | Stock |
-|------------|------------------|--------------|---------|-------|
-| 106        | Fitness Tracker  | Wearables    | NULL    | NULL  |
-| 107        | Laptop           | Electronics  | 999.99  | 50    |
-| 108        | Wireless Earbuds | Accessories  | NULL    | 100   |
-
-
+**Program:**
 ```sql
-
-INSERT INTO Products (ProductID,Name,Category) VALUES (106,'Fitness Tracker','Wearables');
-INSERT INTO Products(ProductID,Name,Category,Price,Stock) VALUES (107,'Laptop','Electronic',999.99,50);
-INSERT INTO Products(ProductID,Name,Category,Stock) VALUES (108,'Wireless Earbud','Accessorie',100);
- 
+INSERT INTO Student_details (RollNo,Name,Gender) VALUES (204,'Samuel Black','M');
 ```
 
 **Output:**
 
-<img width="1811" height="306" alt="image" src="https://github.com/user-attachments/assets/30860e7b-ff40-4fad-8470-35c5eb5edd28" />
+![image](https://github.com/user-attachments/assets/0380f08a-8741-4c82-b5c3-15e9cd327c89)
+
+
+**Question 9**
+---
+![image](https://github.com/user-attachments/assets/6d9a1185-c523-4ebf-a97e-5363fb8c459a)
+
+**Program:**
+```sql
+CREATE TABLE Attendance(
+    AttendanceID INTEGER PRIMARY KEY,
+    EmployeeID INTEGER,
+    AttendanceDate DATE,
+    Status TEXT CHECK (Status IN ('Present','Absent','Leave')),
+    FOREIGN KEY (EmployeeID) REFERENCES Employees(EmployeeID)
+    );
+```
+
+**Output:**
+![image](https://github.com/user-attachments/assets/f1471ac5-96db-4d5d-971e-d948c41397c2)
+
+**Question 10**
+---
+![image](https://github.com/user-attachments/assets/fae2bd83-5291-469c-9806-b093de59c950)
+
+**Program:**
+```sql
+INSERT INTO Products(Name,Category,Price,Stock) VALUES ('Smartphone','Electronics',800,150),('Headphones','Accessories',200,300);
+```
+
+**Output:**
+
+![image](https://github.com/user-attachments/assets/f618a7eb-fc94-44f7-9b18-51df9752c22a)
 
 
 
